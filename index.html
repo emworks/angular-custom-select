@@ -1,1 +1,30 @@
-init
+<!DOCTYPE html>
+<html lang="en" ng-app="dropdown">
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title>AngularJS Custom Select</title>
+    <link rel="stylesheet" href="css/vendor/normalize.css"/>
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+  </head>
+  <body>
+    <div id="main" ng-controller="dropdownCtrl">
+      <form ng-submit="submit()" novalidate>
+        <input type="hidden" name="dd" value="{{ dd }}"/>
+        <dropdown placeholder="Choose..." list="currencies" ids="filters[1]"
+                property="name" selected="selected[1]"></dropdown>
+        <dropdown placeholder="Choose..." list="currencies" ids="filters[2]"
+                property="name" selected="selected[2]"></dropdown>
+        <button id="submit-btn" type="submit">Submit</button>
+      </form>
+      <div ng-repeat="d in data.base | fakeDataFilter:dd:true as result">
+        <pre>{{ d }}</pre>
+      </div>
+      <div ng-if="result.length == 0">
+        <pre>No results for {{ dd }}</pre>
+      </div>
+    </div>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>

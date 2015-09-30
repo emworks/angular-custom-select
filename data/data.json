@@ -1,0 +1,18 @@
+{
+  "base": [
+    {
+      "name" : "EUR/USD",
+      "bid" : "1.24237",
+      "ask" : "1.24243",
+      "spread": "0.6",
+      "move" : "down"
+    },
+    {
+      "name" : "EUR/GBP",
+      "bid" : "0.79276",
+      "ask" : "0.79293",
+      "spread": "0.4",
+      "move" : "down"
+    }
+  ]
+}
