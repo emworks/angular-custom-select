@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "AngularJS custom select component",
   "author": "Yevgeny Yakushev <e.v.yakushev@gmail.com>",
-  "main": "js/app.js",
+  "main": "source/js/main.js",
   "dependencies": {
     "angular": "~1.5.0-beta.0",
     "angular-resource": "~1.5.0-beta.0"
@@ -13,15 +13,18 @@
     "watchify": "~2.1.0",
     "less": "~2.5.3",
     "minify": "~1.4.20",
-    "uglify-js": "~2.4.24"
+    "uglify-js": "~2.4.24",
+    "ng-annotate": "~1.0.2"
   },
   "scripts": {
-    "watch": "watchify -o js/bundle.js -v -d .",
-    "build:js": "browserify . > js/bundle.js",
-    "build:css": "lessc css/app.less css/app.css",
+    "watch": "watchify -o public/js/bundle.js -v -d .",
+    "uglify": "ng-annotate -ar public/js/bundle.js | uglifyjs -cm > public/js/bundle.min.js",
+    "build:js": "browserify . > public/js/bundle.js",
+    "minify": "minify public/css/main.css > public/css/main.min.css",
+    "build:css": "lessc source/css/main.less public/css/main.css",
     "build": "npm run build:js && npm run build:css",
-    "release:js": "npm run build:js && browserify . | uglifyjs -cm > js/bundle.min.js",
-    "release:css": "npm run build:css && minify css/app.css > css/app.min.css",
+    "release:js": "npm run build:js && npm run uglify",
+    "release:css": "npm run build:css && npm run minify",
     "release": "npm run release:js && npm run release:css"
   }
 }
