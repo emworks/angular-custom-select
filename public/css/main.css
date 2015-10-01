@@ -1,26 +1,13 @@
-html,
-body {
-  height: 100%;
-}
 .border-box {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-#main {
+html,
+body {
   height: 100%;
-  padding: 20px;
 }
-#submit-btn {
-  display: inline-block;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  border: 1px solid #ddd;
-  padding: 0px 10px;
-  vertical-align: top;
-  line-height: 40px;
-  height: 40px;
-  position: relative;
-  z-index: 9;
+body {
+  padding: 20px;
 }
 dropdown {
   display: inline-block;
@@ -158,4 +145,16 @@ dropdown .dropdown-container.hidden {
   -ms-transition: opacity 0.25s, width 0.25s ease 0.25s, height 0.25s ease 0.25s, margin 0.25s ease 0.25s;
   -o-transition: opacity 0.25s, width 0.25s ease 0.25s, height 0.25s ease 0.25s, margin 0.25s ease 0.25s;
   transition: opacity 0.25s, width 0.25s ease 0.25s, height 0.25s ease 0.25s, margin 0.25s ease 0.25s;
+}
+#submit-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #ddd;
+  padding: 0px 10px;
+  vertical-align: top;
+  line-height: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 9;
 }
